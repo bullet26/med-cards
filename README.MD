@@ -2,6 +2,9 @@
 
 ## Link https://bullet26.github.io/DAN.IT-SP3/
 
+  email: pu@binotel.com
+  password: qwerQT@895
+
 ## Technologies used
 
 -   [Webpack](https://webpack.js.org/)

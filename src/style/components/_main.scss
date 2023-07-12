@@ -1,0 +1,197 @@
+input[type='password'] {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 2px;
+}
+
+.calendar-wrapper {
+  background-image: url("./assets/img/zyro-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 81vh;
+}
+
+.calendar {
+  display: none;
+}
+
+.filter {
+  display: none;
+}
+
+table {
+  border-collapse: unset;
+}
+
+.table-empty-block {
+  height: 70px;
+  padding: 0;
+  border: 1px dashed #6c757d;
+  border-radius: 10px;
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    z-index: -1;
+    width: 25px;
+    height: 1px;
+    border-top: 1px dashed #6c757d;
+    position: absolute;
+    top: 32px;
+    left: 45%;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    border: 1px dashed #0a58ca;
+
+    &::before,
+    &::after {
+      border-top: 1px dashed #0a58ca;
+    }
+  }
+}
+
+.base-options {
+  display: none;
+}
+
+.cardiologist-options {
+  display: none;
+}
+
+.dentist-options {
+  display: none;
+}
+
+.therapist-options {
+  display: none;
+}
+
+.visit {
+  &-card-wrapper {
+    border-radius: 10px;
+    position: relative;
+    height: 71px;
+    top: -2px;
+    left: -3px;
+    width: 103%;
+    padding-left: 20px;
+  }
+
+  &-patient,
+  &-doctor {
+    height: 20px;
+    font-size: 14px;
+  }
+
+  &-patient {
+    padding-top: 4px;
+  }
+
+  &-btn {
+    height: 21px;
+    padding-top: 0;
+    border: none;
+    margin-left: 45px;
+  }
+}
+
+.card-el {
+  &-ordinary {
+    display: inline-block;
+    position: absolute;
+    width: 4px;
+    height: 31px;
+    background-color: #0a58ca;
+    left: 1px;
+    top: 10px;
+    border-radius: 15px;
+  }
+
+  &-priority {
+    @extend .card-el-ordinary;
+    background-color: orange;
+  }
+
+  &-urgent {
+    @extend .card-el-ordinary;
+    background-color: #ea0519;
+  }
+}
+
+.bi::before {
+  color: #0a58ca;
+}
+
+.pencil {
+  position: absolute;
+  right: 6px;
+}
+
+.trash {
+  position: absolute;
+  right: 6px;
+  top: 19px;
+}
+
+.check {
+  position: absolute;
+  right: 6px;
+  top: 38px;
+  z-index: 2;
+}
+
+.done-visit {
+  background-color: #a3ffad;
+}
+
+.msg-create,
+.msg {
+  color: $red-500;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.error {
+  &-title {
+    color: $red-500;
+  }
+
+  &-img {
+    width: 100px;
+    height: 130px;
+  }
+
+  &-body {
+    margin-top: 15px;
+    color: $red-800;
+  }
+}
+
+.inform-bar {
+  position: absolute;
+  top: 70px;
+  left: 268px;
+}
+
+.dragover {
+  background-color: rgba(207, 244, 252, 0.59);
+}

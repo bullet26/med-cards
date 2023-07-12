@@ -1,0 +1,45 @@
+.logo {
+    height: 60px;
+    width: 60px;
+}
+
+.create-visit__btn {
+    display: none;
+}
+
+.filter-form {
+    display: inline-block;
+    width: 10vw;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.bi-search {
+    margin-left: 58px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.search-form {
+    display: none;
+    align-items: center;
+    gap: 10px;
+
+    &.active {
+        display: flex;
+    }
+}
+
+.nowrap {
+    width: 250px;
+    display: inline-block;
+}
+
+#search-status{
+    width: 175px;
+}
+
+.filter-auth{
+    position: absolute;
+    left: 50%;
+}

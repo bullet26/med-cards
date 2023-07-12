@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SP3</title>
+        <link rel="icon" type="image/x-icon" href="./assets/img/medical-center-logo.png">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="#" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img class="rounded float-start logo" src="assets/img/medical-center-logo.png" alt="logo" />
+                </a>
+                <form class="search-form flex-nowrap" id="filter">
+                    <select name="status" id="search-status" class="form-select form-select-sm filter-form" aria-label=">Show visits by statuse">
+                        <option value="none" selected>Show visits by status</option>
+                        <option value="true">Done</option>
+                        <option value="false">Not yet</option>
+                    </select>
+                    <select name="urgency" id="search-urgency" class="form-select form-select-sm filter-form" aria-label="Urgency">
+                        <option value="none" selected>Urgency</option>
+                        <option value="ordinary">ordinary</option>
+                        <option value="priority">priority</option>
+                        <option value="urgent">urgent</option>
+                    </select>
+                    <select name="doctor" id="search-spec" class="form-select form-select-sm filter-form" aria-label="Specialist">
+                        <option value="none" selected>Specialist</option>
+                        <option value="cardiologist">Cardiologist</option>
+                        <option value="dentist">Dentist</option>
+                        <option value="therapist">Therapist</option>
+                    </select>
+                    <div class="form-floating nowrap">
+                        <input name="searhcString" type="text" class="form-control" id="search-input" placeholder="name@example.com" />
+                        <label for="search-input">Search by title or description</label>
+                    </div>
+                </form>
+
+                <i class="bi bi-funnel-fill text-primary-emphasis fst-normal filter">Filters</i>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-primary create-visit__btn" data-bs-toggle="modal" data-bs-target="#modal-create-visit">Create visit</button>
+                    <button type="button" class="btn btn-outline-primary me-2 login__btn" data-bs-toggle="modal" data-bs-target="#modal-sign-in">Login</button>
+                </div>
+            </header>
+        </div>
+        <div class="inform-bar text-primary text-opacity-75"></div>
+        <div class="calendar-wrapper container-fluid">
+            <div class="container-fluid calendar">
+                <div class="container text-center">
+                    <div class="row mb-3">
+                        <div class="col col-md-auto"></div>
+                        <div class="col text-primary text-opacity-75"><span class="text-primary-emphasis">01</span> Monday</div>
+                        <div class="col text-primary text-opacity-75"><span class="text-primary-emphasis">02</span> Tuesday</div>
+                        <div class="col text-primary text-opacity-75"><span class="text-primary-emphasis">03</span> Wednesday</div>
+                        <div class="col text-primary text-opacity-75"><span class="text-primary-emphasis">04</span> Thursday</div>
+                        <div class="col text-primary text-opacity-75"><span class="text-primary-emphasis">05</span> Friday</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">09:00</div>
+                        <div data-date="01-09" class="col table-empty-block"></div>
+                        <div data-date="02-09" class="col table-empty-block"></div>
+                        <div data-date="03-09" class="col table-empty-block"></div>
+                        <div data-date="04-09" class="col table-empty-block"></div>
+                        <div data-date="05-09" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">10:00</div>
+                        <div data-date="01-10" class="col table-empty-block"></div>
+                        <div data-date="02-10" class="col table-empty-block"></div>
+                        <div data-date="03-10" class="col table-empty-block"></div>
+                        <div data-date="04-10" class="col table-empty-block"></div>
+                        <div data-date="05-10" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">11:00</div>
+                        <div data-date="01-11" class="col table-empty-block"></div>
+                        <div data-date="02-11" class="col table-empty-block"></div>
+                        <div data-date="03-11" class="col table-empty-block"></div>
+                        <div data-date="04-11" class="col table-empty-block"></div>
+                        <div data-date="05-11" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">12:00</div>
+                        <div data-date="01-12" class="col table-empty-block"></div>
+                        <div data-date="02-12" class="col table-empty-block"></div>
+                        <div data-date="03-12" class="col table-empty-block"></div>
+                        <div data-date="04-12" class="col table-empty-block"></div>
+                        <div data-date="05-12" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">13:00</div>
+                        <div data-date="01-13" class="col table-empty-block"></div>
+                        <div data-date="02-13" class="col table-empty-block"></div>
+                        <div data-date="03-13" class="col table-empty-block"></div>
+                        <div data-date="04-13" class="col table-empty-block"></div>
+                        <div data-date="05-13" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">14:00</div>
+                        <div data-date="01-14" class="col table-empty-block"></div>
+                        <div data-date="02-14" class="col table-empty-block"></div>
+                        <div data-date="03-14" class="col table-empty-block"></div>
+                        <div data-date="04-14" class="col table-empty-block"></div>
+                        <div data-date="05-14" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">15:00</div>
+                        <div data-date="01-15" class="col table-empty-block"></div>
+                        <div data-date="02-15" class="col table-empty-block"></div>
+                        <div data-date="03-15" class="col table-empty-block"></div>
+                        <div data-date="04-15" class="col table-empty-block"></div>
+                        <div data-date="05-15" class="col table-empty-block"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col text-primary-emphasis col-md-auto align-self-center">16:00</div>
+                        <div data-date="01-16" class="col table-empty-block"></div>
+                        <div data-date="02-16" class="col table-empty-block"></div>
+                        <div data-date="03-16" class="col table-empty-block"></div>
+                        <div data-date="04-16" class="col table-empty-block"></div>
+                        <div data-date="05-16" class="col table-empty-block"></div>
+                    </div>
+                </div>
+        </div>
+        </div>
+
+        <div id="modal-sign-in" class="modal fade text-center" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="signin">
+                        <div class="modal-body">
+                            <div class="form-signin w-100 m-auto">
+                                <img class="mb-4 justify-content-center" src="assets/img/medical-center-logo.png" alt="logo" width="72" height="57" />
+                                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                                <div class="form-floating">
+                                    <input id="input-email" name="email" type="email" class="form-control mb-3" placeholder="name@example.com" required />
+                                    <label for="input-email">Email address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" name="password" class="form-control mb-3" id="floatingPassword" placeholder="Password" required />
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label> <input type="checkbox" value="remember-me" id="rememberme" /> Remember me </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mb-2">
+                            <button id="sign-btn" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-create-visit" class="modal fade text-center modal-lg" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Create visit</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="select-doctors">
+                            <select name="doctor" class="form-select mb-3 select-doctors" aria-label="Default select example" required>
+                                <option value="Choose a doctor:" selected>Choose a doctor:</option>
+                                <option value="cardiologist">Cardiologist</option>
+                                <option value="dentist">Dentist</option>
+                                <option value="therapist">Therapist</option>
+                            </select>
+                            <div class="base-options">
+                                <input name="title" required type="text" class="form-control mb-3" placeholder="The purpose of the visit:" />
+                                <h6 class="mb-2">Urgency:</h6>
+                                <div class="form-check form-check-inline mb-3">
+                                    <label>
+                                        ordinary
+                                        <input checked class="form-check-input" type="radio" value="ordinary" name="urgency" />
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <label>
+                                        priority
+                                        <input class="form-check-input" type="radio" name="urgency" value="priority" />
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <label>
+                                        urgent
+                                        <input class="form-check-input" type="radio" name="urgency" value="urgent" />
+                                    </label>
+                                </div>
+                                <input name="patient" required class="form-control mb-3" type="text" placeholder="Name of the patient" />
+                                <input name="phone" required class="form-control mb-3" type="text" placeholder="Phone number" />
+                                <select name="day" class="form-select mb-3 select-dates" aria-label="Default select example" required>
+                                    <option selected>Choose day:</option>
+                                    <option value="01">01 Monday</option>
+                                    <option value="02">02 Tuesday</option>
+                                    <option value="03">03 Wednesday</option>
+                                    <option value="04">04 Thursday</option>
+                                    <option value="05">05 Friday</option>
+                                </select>
+                                <select name="hour" class="form-select mb-3 select-hours" aria-label="Default select example" required>
+                                    <option selected>Choose time:</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                </select>
+
+                                <textarea class="form-control mb-3" name="description" rows="3" placeholder="Description of the visit"></textarea>
+                            </div>
+
+                            <div class="cardiologist-options">
+                                <input name="pressure" class="form-control mb-3" type="text" placeholder="Normal pressure" />
+                                <input name="massIndex" class="form-control mb-3" type="text" placeholder="Body mass index" />
+                                <input name="diseases" class="form-control mb-3" type="text" placeholder="Previous diseases of the cardiovascular system" />
+                                <input name="cardiologistAge" class="form-control mb-3" type="text" placeholder="Age" />
+                            </div>
+                            <div class="dentist-options">
+                                <input name="lastVisit" class="form-control mb-3" type="text" placeholder="Date of last visit" />
+                            </div>
+                            <div class="therapist-options">
+                                <input name="therapistAge" class="form-control mb-3" type="text" placeholder="Age" />
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary mt-2 select-doctor-btn" type="submit" disabled>Create visit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade error-modal" id="staticBackdropError" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelError" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="staticBackdropLabelError">
+                    <div class="modal-header">
+                        <h5 class="modal-title error-title">Something went wrong</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/img/90ba6861873942e997e7893141022b1b.jpg" class="rounded mx-auto d-block error-img" alt="error-img" />
+                        <span class="error-body"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <svg class="lp" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#000" />
+                    <stop offset="100%" stop-color="#fff" />
+                </linearGradient>
+                <mask id="mask1">
+                    <rect x="0" y="0" width="128" height="128" fill="url(#grad1)" />
+                </mask>
+            </defs>
+            <g fill="none" stroke-linecap="round" stroke-width="16">
+                <circle class="lp__ring" r="56" cx="64" cy="64" stroke="#ddd" />
+                <g stroke="#0a58ca">
+                    <polyline class="lp__fall-line" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay1" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay2" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay3" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay4" points="64,8 64,120" />
+                    <circle class="lp__drops" r="56" cx="64" cy="64" transform="rotate(90,64,64)" />
+                    <circle class="lp__worm" r="56" cx="64" cy="64" transform="rotate(-90,64,64)" />
+                </g>
+                <g stroke="#9dd6ff" mask="url(#mask1)">
+                    <polyline class="lp__fall-line" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay1" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay2" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay3" points="64,8 64,120" />
+                    <polyline class="lp__fall-line lp__fall-line--delay4" points="64,8 64,120" />
+                    <circle class="lp__drops" r="56" cx="64" cy="64" transform="rotate(90,64,64)" />
+                    <circle class="lp__worm" r="56" cx="64" cy="64" transform="rotate(-90,64,64)" />
+                </g>
+            </g>
+        </svg>
+    </body>
+</html>

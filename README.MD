@@ -16,11 +16,12 @@
 
 ## About the project 
  It's application for secretary to manage visits in the clinic. You can schedule your visit for one of 3 available doctors:
-Therapist
-Dentist
-Cardiologist
+-  Therapist
+-  Dentist
+-  Cardiologist
 
 Application supports archive of visits and you can filter by actual and done visits, by level priority and many other parameters.
+
 It also supports drag & drop, so you can sort card as you wish in this session without any problem.
 
 ## Team Members

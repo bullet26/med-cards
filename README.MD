@@ -1,9 +1,9 @@
-# Third Step Project - "Cards"
+#  Doctor's Schedule Visits application  - "Cards"
 
 ## Link https://bullet26.github.io/DAN.IT-SP3/
 
-  email: pu@binotel.com
-  password: qwerQT@895
+#### Login: pu@binotel.com
+#### Password: qwerQT@895
 
 ## Technologies used
 
@@ -13,6 +13,15 @@
 -   [SCSS](https://sass-lang.com/documentation/)
 -   [HTML5](https://developer.mozilla.org/ru/docs/Glossary/HTML5)
 -   [JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript)
+
+## About the project 
+ It's application for secretary to manage visits in the clinic. You can schedule your visit for one of 3 available doctors:
+Therapist
+Dentist
+Cardiologist
+
+Application supports archive of visits and you can filter by actual and done visits, by level priority and many other parameters.
+It also supports drag & drop, so you can sort card as you wish in this session without any problem.
 
 ## Team Members
 
